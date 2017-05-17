@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFCC16481ECC2791004B1F43 /* redstar.png in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEEF1ECC196A0065ED63 /* redstar.png */; };
+		EFCC164B1ECC2814004B1F43 /* tree_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFCC16491ECC2814004B1F43 /* tree_sel@2x.png */; };
+		EFCC164C1ECC2814004B1F43 /* tree_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFCC164A1ECC2814004B1F43 /* tree_sel@3x.png */; };
+		EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */; };
+		EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC31ECBEBC70065ED63 /* ViewController.swift */; };
+		EFEECEC71ECBEBC70065ED63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEC51ECBEBC70065ED63 /* Main.storyboard */; };
+		EFEECEC91ECBEBC70065ED63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */; };
+		EFEECECC1ECBEBC70065ED63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEECECA1ECBEBC70065ED63 /* LaunchScreen.storyboard */; };
+		EFEECED71ECBEBC70065ED63 /* SparkGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECED61ECBEBC70065ED63 /* SparkGameTests.swift */; };
+		EFEECEE21ECBEBC70065ED63 /* SparkGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEE11ECBEBC70065ED63 /* SparkGameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFEECED31ECBEBC70065ED63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFEECEB61ECBEBC60065ED63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFEECEBD1ECBEBC60065ED63;
+			remoteInfo = SparkGame;
+		};
+		EFEECEDE1ECBEBC70065ED63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFEECEB61ECBEBC60065ED63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFEECEBD1ECBEBC60065ED63;
+			remoteInfo = SparkGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFCC16491ECC2814004B1F43 /* tree_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tree_sel@2x.png"; path = "SparkGame/tree_sel@2x.png"; sourceTree = "<group>"; };
+		EFCC164A1ECC2814004B1F43 /* tree_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tree_sel@3x.png"; path = "SparkGame/tree_sel@3x.png"; sourceTree = "<group>"; };
+		EFEECEBE1ECBEBC60065ED63 /* SparkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EFEECEC31ECBEBC70065ED63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFEECEC61ECBEBC70065ED63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFEECECB1ECBEBC70065ED63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EFEECECD1ECBEBC70065ED63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFEECED21ECBEBC70065ED63 /* SparkGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFEECED61ECBEBC70065ED63 /* SparkGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkGameTests.swift; sourceTree = "<group>"; };
+		EFEECED81ECBEBC70065ED63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFEECEDD1ECBEBC70065ED63 /* SparkGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFEECEE11ECBEBC70065ED63 /* SparkGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkGameUITests.swift; sourceTree = "<group>"; };
+		EFEECEE31ECBEBC70065ED63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFEECEEF1ECC196A0065ED63 /* redstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redstar.png; path = SparkGame/redstar.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFEECEBB1ECBEBC60065ED63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEECECF1ECBEBC70065ED63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEECEDA1ECBEBC70065ED63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFEECEB51ECBEBC60065ED63 = {
+			isa = PBXGroup;
+			children = (
+				EFCC16491ECC2814004B1F43 /* tree_sel@2x.png */,
+				EFCC164A1ECC2814004B1F43 /* tree_sel@3x.png */,
+				EFEECEEF1ECC196A0065ED63 /* redstar.png */,
+				EFEECEC01ECBEBC60065ED63 /* SparkGame */,
+				EFEECED51ECBEBC70065ED63 /* SparkGameTests */,
+				EFEECEE01ECBEBC70065ED63 /* SparkGameUITests */,
+				EFEECEBF1ECBEBC60065ED63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFEECEBF1ECBEBC60065ED63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFEECEBE1ECBEBC60065ED63 /* SparkGame.app */,
+				EFEECED21ECBEBC70065ED63 /* SparkGameTests.xctest */,
+				EFEECEDD1ECBEBC70065ED63 /* SparkGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFEECEC01ECBEBC60065ED63 /* SparkGame */ = {
+			isa = PBXGroup;
+			children = (
+				EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */,
+				EFEECEC31ECBEBC70065ED63 /* ViewController.swift */,
+				EFEECEC51ECBEBC70065ED63 /* Main.storyboard */,
+				EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */,
+				EFEECECA1ECBEBC70065ED63 /* LaunchScreen.storyboard */,
+				EFEECECD1ECBEBC70065ED63 /* Info.plist */,
+			);
+			path = SparkGame;
+			sourceTree = "<group>";
+		};
+		EFEECED51ECBEBC70065ED63 /* SparkGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFEECED61ECBEBC70065ED63 /* SparkGameTests.swift */,
+				EFEECED81ECBEBC70065ED63 /* Info.plist */,
+			);
+			path = SparkGameTests;
+			sourceTree = "<group>";
+		};
+		EFEECEE01ECBEBC70065ED63 /* SparkGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EFEECEE11ECBEBC70065ED63 /* SparkGameUITests.swift */,
+				EFEECEE31ECBEBC70065ED63 /* Info.plist */,
+			);
+			path = SparkGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFEECEBD1ECBEBC60065ED63 /* SparkGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFEECEE61ECBEBC70065ED63 /* Build configuration list for PBXNativeTarget "SparkGame" */;
+			buildPhases = (
+				EFEECEBA1ECBEBC60065ED63 /* Sources */,
+				EFEECEBB1ECBEBC60065ED63 /* Frameworks */,
+				EFEECEBC1ECBEBC60065ED63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkGame;
+			productName = SparkGame;
+			productReference = EFEECEBE1ECBEBC60065ED63 /* SparkGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFEECED11ECBEBC70065ED63 /* SparkGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFEECEE91ECBEBC70065ED63 /* Build configuration list for PBXNativeTarget "SparkGameTests" */;
+			buildPhases = (
+				EFEECECE1ECBEBC70065ED63 /* Sources */,
+				EFEECECF1ECBEBC70065ED63 /* Frameworks */,
+				EFEECED01ECBEBC70065ED63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFEECED41ECBEBC70065ED63 /* PBXTargetDependency */,
+			);
+			name = SparkGameTests;
+			productName = SparkGameTests;
+			productReference = EFEECED21ECBEBC70065ED63 /* SparkGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EFEECEDC1ECBEBC70065ED63 /* SparkGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFEECEEC1ECBEBC70065ED63 /* Build configuration list for PBXNativeTarget "SparkGameUITests" */;
+			buildPhases = (
+				EFEECED91ECBEBC70065ED63 /* Sources */,
+				EFEECEDA1ECBEBC70065ED63 /* Frameworks */,
+				EFEECEDB1ECBEBC70065ED63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFEECEDF1ECBEBC70065ED63 /* PBXTargetDependency */,
+			);
+			name = SparkGameUITests;
+			productName = SparkGameUITests;
+			productReference = EFEECEDD1ECBEBC70065ED63 /* SparkGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFEECEB61ECBEBC60065ED63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Bruce Jiang";
+				TargetAttributes = {
+					EFEECEBD1ECBEBC60065ED63 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = V5D8U6F5QF;
+						ProvisioningStyle = Automatic;
+					};
+					EFEECED11ECBEBC70065ED63 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = AUU237XZLK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EFEECEBD1ECBEBC60065ED63;
+					};
+					EFEECEDC1ECBEBC70065ED63 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = AUU237XZLK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EFEECEBD1ECBEBC60065ED63;
+					};
+				};
+			};
+			buildConfigurationList = EFEECEB91ECBEBC60065ED63 /* Build configuration list for PBXProject "SparkGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFEECEB51ECBEBC60065ED63;
+			productRefGroup = EFEECEBF1ECBEBC60065ED63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFEECEBD1ECBEBC60065ED63 /* SparkGame */,
+				EFEECED11ECBEBC70065ED63 /* SparkGameTests */,
+				EFEECEDC1ECBEBC70065ED63 /* SparkGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFEECEBC1ECBEBC60065ED63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCC164C1ECC2814004B1F43 /* tree_sel@3x.png in Resources */,
+				EFCC16481ECC2791004B1F43 /* redstar.png in Resources */,
+				EFEECECC1ECBEBC70065ED63 /* LaunchScreen.storyboard in Resources */,
+				EFEECEC91ECBEBC70065ED63 /* Assets.xcassets in Resources */,
+				EFEECEC71ECBEBC70065ED63 /* Main.storyboard in Resources */,
+				EFCC164B1ECC2814004B1F43 /* tree_sel@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEECED01ECBEBC70065ED63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEECEDB1ECBEBC70065ED63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFEECEBA1ECBEBC60065ED63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */,
+				EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEECECE1ECBEBC70065ED63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFEECED71ECBEBC70065ED63 /* SparkGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEECED91ECBEBC70065ED63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFEECEE21ECBEBC70065ED63 /* SparkGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFEECED41ECBEBC70065ED63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFEECEBD1ECBEBC60065ED63 /* SparkGame */;
+			targetProxy = EFEECED31ECBEBC70065ED63 /* PBXContainerItemProxy */;
+		};
+		EFEECEDF1ECBEBC70065ED63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFEECEBD1ECBEBC60065ED63 /* SparkGame */;
+			targetProxy = EFEECEDE1ECBEBC70065ED63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EFEECEC51ECBEBC70065ED63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFEECEC61ECBEBC70065ED63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EFEECECA1ECBEBC70065ED63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFEECECB1ECBEBC70065ED63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFEECEE41ECBEBC70065ED63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		EFEECEE51ECBEBC70065ED63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFEECEE71ECBEBC70065ED63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V5D8U6F5QF;
+				INFOPLIST_FILE = SparkGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		EFEECEE81ECBEBC70065ED63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = V5D8U6F5QF;
+				INFOPLIST_FILE = SparkGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		EFEECEEA1ECBEBC70065ED63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = AUU237XZLK;
+				INFOPLIST_FILE = SparkGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SparkGame.app/SparkGame";
+			};
+			name = Debug;
+		};
+		EFEECEEB1ECBEBC70065ED63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = AUU237XZLK;
+				INFOPLIST_FILE = SparkGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SparkGame.app/SparkGame";
+			};
+			name = Release;
+		};
+		EFEECEED1ECBEBC70065ED63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = AUU237XZLK;
+				INFOPLIST_FILE = SparkGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SparkGame;
+			};
+			name = Debug;
+		};
+		EFEECEEE1ECBEBC70065ED63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = AUU237XZLK;
+				INFOPLIST_FILE = SparkGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SparkGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFEECEB91ECBEBC60065ED63 /* Build configuration list for PBXProject "SparkGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFEECEE41ECBEBC70065ED63 /* Debug */,
+				EFEECEE51ECBEBC70065ED63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFEECEE61ECBEBC70065ED63 /* Build configuration list for PBXNativeTarget "SparkGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFEECEE71ECBEBC70065ED63 /* Debug */,
+				EFEECEE81ECBEBC70065ED63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFEECEE91ECBEBC70065ED63 /* Build configuration list for PBXNativeTarget "SparkGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFEECEEA1ECBEBC70065ED63 /* Debug */,
+				EFEECEEB1ECBEBC70065ED63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFEECEEC1ECBEBC70065ED63 /* Build configuration list for PBXNativeTarget "SparkGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFEECEED1ECBEBC70065ED63 /* Debug */,
+				EFEECEEE1ECBEBC70065ED63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFEECEB61ECBEBC60065ED63 /* Project object */;
+}
