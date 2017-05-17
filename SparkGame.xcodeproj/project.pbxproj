@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EFCC16481ECC2791004B1F43 /* redstar.png in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEEF1ECC196A0065ED63 /* redstar.png */; };
-		EFCC164B1ECC2814004B1F43 /* tree_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFCC16491ECC2814004B1F43 /* tree_sel@2x.png */; };
-		EFCC164C1ECC2814004B1F43 /* tree_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFCC164A1ECC2814004B1F43 /* tree_sel@3x.png */; };
+		EF01B3231ECC807B008BE5EF /* tree_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */; };
+		EF01B3241ECC807B008BE5EF /* tree_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */; };
 		EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */; };
 		EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC31ECBEBC70065ED63 /* ViewController.swift */; };
 		EFEECEC71ECBEBC70065ED63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEC51ECBEBC70065ED63 /* Main.storyboard */; };
@@ -37,8 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EFCC16491ECC2814004B1F43 /* tree_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tree_sel@2x.png"; path = "SparkGame/tree_sel@2x.png"; sourceTree = "<group>"; };
-		EFCC164A1ECC2814004B1F43 /* tree_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tree_sel@3x.png"; path = "SparkGame/tree_sel@3x.png"; sourceTree = "<group>"; };
+		EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree_sel@2x.png"; sourceTree = "<group>"; };
+		EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree_sel@3x.png"; sourceTree = "<group>"; };
 		EFEECEBE1ECBEBC60065ED63 /* SparkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEECEC31ECBEBC70065ED63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +51,6 @@
 		EFEECEDD1ECBEBC70065ED63 /* SparkGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SparkGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEECEE11ECBEBC70065ED63 /* SparkGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkGameUITests.swift; sourceTree = "<group>"; };
 		EFEECEE31ECBEBC70065ED63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFEECEEF1ECC196A0065ED63 /* redstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redstar.png; path = SparkGame/redstar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +78,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF01B3161ECC807B008BE5EF /* SourceImages */ = {
+			isa = PBXGroup;
+			children = (
+				EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */,
+				EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */,
+			);
+			name = SourceImages;
+			path = SparkGame/SourceImages;
+			sourceTree = "<group>";
+		};
 		EFEECEB51ECBEBC60065ED63 = {
 			isa = PBXGroup;
 			children = (
-				EFCC16491ECC2814004B1F43 /* tree_sel@2x.png */,
-				EFCC164A1ECC2814004B1F43 /* tree_sel@3x.png */,
-				EFEECEEF1ECC196A0065ED63 /* redstar.png */,
+				EF01B3161ECC807B008BE5EF /* SourceImages */,
 				EFEECEC01ECBEBC60065ED63 /* SparkGame */,
 				EFEECED51ECBEBC70065ED63 /* SparkGameTests */,
 				EFEECEE01ECBEBC70065ED63 /* SparkGameUITests */,
@@ -244,12 +250,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCC164C1ECC2814004B1F43 /* tree_sel@3x.png in Resources */,
-				EFCC16481ECC2791004B1F43 /* redstar.png in Resources */,
 				EFEECECC1ECBEBC70065ED63 /* LaunchScreen.storyboard in Resources */,
+				EF01B3241ECC807B008BE5EF /* tree_sel@3x.png in Resources */,
+				EF01B3231ECC807B008BE5EF /* tree_sel@2x.png in Resources */,
 				EFEECEC91ECBEBC70065ED63 /* Assets.xcassets in Resources */,
 				EFEECEC71ECBEBC70065ED63 /* Main.storyboard in Resources */,
-				EFCC164B1ECC2814004B1F43 /* tree_sel@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

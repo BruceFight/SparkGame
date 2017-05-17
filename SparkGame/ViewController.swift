@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         nameLabelNode.position = CGPoint.init(x: 0, y: logNode.size.height/2)
 
         
-        leftEmmiterNode.particleTexture = SKTexture.init(imageNamed: "redstar")
+        leftEmmiterNode.particleTexture = SKTexture.init(imageNamed: "tree_sel")
         leftEmmiterNode.position = CGPoint.init(x:-logNode.size.width/2, y: logNode.size.height/2)
         leftEmmiterNode.particlePosition = CGPoint.init(x: 0, y: 0)
         leftEmmiterNode.particleBirthRate = 1
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         leftEmmiterNode.targetNode = logNode
         logNode.addChild(leftEmmiterNode)
         
-        rightEmmiterNode.particleTexture = SKTexture.init(imageNamed: "redstar")
+        rightEmmiterNode.particleTexture = SKTexture.init(imageNamed: "tree_sel")
         rightEmmiterNode.position = CGPoint.init(x:logNode.size.width/2, y: logNode.size.height/2)
         rightEmmiterNode.particlePosition = CGPoint.init(x: 0, y: 0)
         rightEmmiterNode.particleBirthRate = 1
@@ -83,17 +83,54 @@ class ViewController: UIViewController {
         logNode.addChild(nameLabelNode)
         gameScene.addChild(logNode)
         mainSKView.presentScene(gameScene)
+        setHuoChaiRen()
         self.view.addSubview(mainSKView)
     }
+    
+    func setHuoChaiRen() -> () {
+        /*
+         SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@“monster.atlas”];
+         SKTexture *f1 = [atlas textureNamed:@”master-walk1.png”];
+         SKTexture *f2 = [atlas textureNamed:@”master-walk2.png”];
+         SKTexture *f3 = [atlas textureNamed:@”master-walk3.png”];
+         SKTexture *f4 = [atlas textureNamed:@”master-walk4.png”];
+         NSArray *monsterWalkTextures = @[f1,f2,f3,f4];
+         */
+        
+        
+         let atlas = SKTextureAtlas(named: "go") // atlas name
+         var goArray = [SKTexture]()
+         
+         let imageCount = atlas.textureNames.count
+         for index in 0..<imageCount {
+            let textureName = "go\(index+1)"
+            goArray.append(atlas.textureNamed(textureName))
+         }
+ 
+//        let atlas = SKTextureAtlas.init(named: "go")
+//        let go1 = atlas.textureNamed("go1")
+//        let go2 = atlas.textureNamed("go2")
+//        let go3 = atlas.textureNamed("go3")
+//        let go4 = atlas.textureNamed("go4")
+//        let go5 = atlas.textureNamed("go5")
+//        let goArray = [go1,go2,go3,go4,go5]
+//        
+        /*
+         SKAction *walkAnimation = [SKAction animateWithTextures:monsterWalkTextures timePerFrame:0.1]
+         [monster runAction:walkAnimation];
+         */
+        
+        let huochaiNode = SKSpriteNode.init()
+        huochaiNode.size = CGSize.init(width: 40, height: 80)
+        huochaiNode.run(SKAction.animate(with: goArray, timePerFrame: 0.3))
+        huochaiNode.position = CGPoint.init(x: 64, y: 100)
+        gameScene.addChild(huochaiNode)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        leftEmmiterNode.particleAction = SKAction.moveBy(x: 3, y: 3, duration: 3)
     }
 }
 
