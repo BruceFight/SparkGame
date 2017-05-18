@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class ViewController: UIViewController {
+class ViewController: SuperViewController,UITextFieldDelegate {
 
     var mainSKView = SKView()
     var gameScene = SKScene()
@@ -17,112 +17,170 @@ class ViewController: UIViewController {
     var nameLabelNode = SKLabelNode()
     var leftEmmiterNode = SKEmitterNode()
     var rightEmmiterNode = SKEmitterNode()
+    
+    //@ forLogNode
     var logNode = SKSpriteNode()
+    var nameTextField = UITextField()
+    var secretTextField = UITextField()
     
+    fileprivate var keyBoardHeight : CGFloat = 0
+    fileprivate var kIfKeyboardShowed : Bool = false
     
+    //MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        setConfigureGround()
+        setMainView()
     }
     
-    func setConfigureGround() -> () {
+    func setMainView() -> () {
+        //@ mainSKView
         mainSKView = SKView.init(frame: self.view.bounds)
         mainSKView.ignoresSiblingOrder = false
         mainSKView.showsNodeCount = true
         mainSKView.showsFPS = true
         gameScene = SKScene.init(size: mainSKView.bounds.size)
         gameScene.scaleMode = .fill
-        
+        //@ slightBackNode
         slightBackNode = SKSpriteNode.init(imageNamed: "image 6")
         slightBackNode.size = gameScene.size
         slightBackNode.position = CGPoint.init(x: gameScene.size.width/2, y: gameScene.size.height/2)
         gameScene.addChild(slightBackNode)
         
-        logNode = SKSpriteNode.init(imageNamed: "image 9")
-        logNode.size = CGSize.init(width: 400, height: 350)
-        logNode.position = CGPoint.init(x: gameScene.size.width/2, y: gameScene.size.height/2)
-        
-        nameLabelNode = SKLabelNode.init(text: "晓培优")
-        nameLabelNode.fontName = "IowanOldStyle-Bold"
-        nameLabelNode.fontColor = UIColor.red
-        nameLabelNode.position = CGPoint.init(x: 0, y: logNode.size.height/2)
-
-        
-        leftEmmiterNode.particleTexture = SKTexture.init(imageNamed: "tree_sel")
-        leftEmmiterNode.position = CGPoint.init(x:-logNode.size.width/2, y: logNode.size.height/2)
-        leftEmmiterNode.particlePosition = CGPoint.init(x: 0, y: 0)
-        leftEmmiterNode.particleBirthRate = 1
-        leftEmmiterNode.particleLifetime = 2
-        leftEmmiterNode.particleSize = CGSize.init(width: 10, height: 10)
-        leftEmmiterNode.particleAlphaRange = 0.6
-        leftEmmiterNode.particleSpeedRange = 80
-        leftEmmiterNode.emissionAngleRange = 360
-        leftEmmiterNode.targetNode = logNode
-        logNode.addChild(leftEmmiterNode)
-        
-        rightEmmiterNode.particleTexture = SKTexture.init(imageNamed: "tree_sel")
-        rightEmmiterNode.position = CGPoint.init(x:logNode.size.width/2, y: logNode.size.height/2)
-        rightEmmiterNode.particlePosition = CGPoint.init(x: 0, y: 0)
-        rightEmmiterNode.particleBirthRate = 1
-        rightEmmiterNode.particleLifetime = 2
-        rightEmmiterNode.particleSize = CGSize.init(width: 10, height: 10)
-        rightEmmiterNode.particleAlphaRange = 0.6
-        rightEmmiterNode.particleSpeedRange = 80
-        rightEmmiterNode.emissionAngleRange = 360
-        rightEmmiterNode.targetNode = logNode
-        logNode.addChild(rightEmmiterNode)
-
-        /*
-        leftEmmiterNode.particlePositionRange = CGVector.init(dx:CGFloat(arc4random_uniform(500)), dy: CGFloat(arc4random_uniform(500)))
-        
-        var transform = CGAffineTransform.init(translationX: CGFloat(arc4random_uniform(500)), y: CGFloat(arc4random_uniform(500)))
-        let path = CGPath.init(ellipseIn: CGRect.init(x: 100, y: 100, width: CGFloat(arc4random_uniform(100)), height: CGFloat(arc4random_uniform(100))), transform: &transform)
-        leftEmmiterNode.run(SKAction.follow(path, speed: 40))
-        */
-        
-        logNode.addChild(nameLabelNode)
-        gameScene.addChild(logNode)
         mainSKView.presentScene(gameScene)
         setHuoChaiRen()
+        setLogView()
+        setLogNode()
         self.view.addSubview(mainSKView)
     }
     
+    func setLogView() -> () {
+        //@ logNode
+        logNode = SKSpriteNode.init(imageNamed: "image 9")
+        logNode.size = CGSize.init(width: 400, height: 350)
+        logNode.position = CGPoint.init(x: gameScene.size.width/2, y: gameScene.size.height/2)
+        gameScene.addChild(logNode)
+        //@ nameLabelNode
+        nameLabelNode = SKLabelNode.init(text: "晓培优")
+        nameLabelNode.fontName = "Zapfino"
+        nameLabelNode.fontColor = UIColor.red
+        nameLabelNode.position = CGPoint.init(x: 0, y: logNode.size.height/2)
+        //@ emitterNode
+        setEmitterNode(node: leftEmmiterNode, position: CGPoint.init(x:-logNode.size.width/2, y: logNode.size.height/2))
+        setEmitterNode(node: rightEmmiterNode, position: CGPoint.init(x:logNode.size.width/2, y: logNode.size.height/2))
+        
+        logNode.addChild(nameLabelNode)
+    }
+    
+    //@ 设置左右粒子
+    func setEmitterNode(node:SKEmitterNode,position:CGPoint) -> () {
+        node.particleTexture = SKTexture.init(imageNamed: "tree_sel")
+        node.position = CGPoint.init(x:logNode.size.width/2, y: logNode.size.height/2)
+        node.position = position
+        node.particlePosition = CGPoint.init(x: 0, y: 0)
+        node.particleBirthRate = 1
+        node.particleLifetime = 2
+        node.particleSize = CGSize.init(width: 10, height: 10)
+        node.particleAlphaRange = 0.6
+        node.particleSpeedRange = 80
+        node.emissionAngleRange = 360
+        node.targetNode = logNode
+        logNode.addChild(node)
+    }
+    
+    func setLogNode() -> () {
+        nameTextField = UITextField.init(frame: CGRect.init(x: (slightBackNode.size.width)/2-100, y: (slightBackNode.size.height)/2-30, width: 200, height: 30))
+        nameTextField.tag = nameTextField.hash
+        nameTextField.delegate = self
+        nameTextField.backgroundColor = UIColor.clear
+        nameTextField.background = #imageLiteral(resourceName: "tree_sel.png")
+        
+        secretTextField = UITextField.init(frame: CGRect.init(x: (slightBackNode.size.width)/2-100, y: (slightBackNode.size.height)/2+30, width: 200, height: 30))
+        secretTextField.tag = secretTextField.hash
+        secretTextField.delegate = self
+        secretTextField.backgroundColor = UIColor.clear
+        mainSKView.addSubview(nameTextField)
+        mainSKView.addSubview(secretTextField)
+        addObserverForKeyBoard()
+    }
+    
+    func addObserverForKeyBoard() -> () {
+        NotificationCenter.default.addObserver(self, selector: #selector(changeCenterPartFrame(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(recoverCenterpartFrame(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willChangeF(noti:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    //MARK: - 键盘Frame即将改变
+    func willChangeF(noti:Notification) -> () {
+        ifRealNeedSet(noti: noti)
+    }
+    
+    //MARK: - 键盘出现
+    func changeCenterPartFrame(noti:Notification) -> () {
+        ifRealNeedSet(noti: noti)
+    }
+    
+    //@ set真正的位置
+    func ifRealNeedSet(noti:Notification) -> () {
+        let userInfo = noti.userInfo
+        let value = userInfo?[UIKeyboardFrameEndUserInfoKey]
+        let boardRect = value as! CGRect
+        
+        if boardRect.height<=55 {
+            return
+        }else {
+            if kIfKeyboardShowed {
+                return
+            }else{
+                keyBoardHeight = boardRect.height
+                centerSetShowed()
+                kIfKeyboardShowed = true
+            }
+        }
+    }
+    
+    //@ set
+    func centerSetShowed() -> () {
+        logNode.run(SKAction.move(by: CGVector.init(dx: 0, dy: keyBoardHeight-(slightBackNode.size.height-logNode.size.height)/2), duration: 0.3))
+        UIView.animate(withDuration: 0.3) {
+            self.nameTextField.frame = CGRect.init(x: self.nameTextField.frame.origin.x, y: self.nameTextField.frame.origin.y - (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.nameTextField.bounds.size.width, height: self.nameTextField.bounds.size.height)
+            self.secretTextField.frame = CGRect.init(x: self.secretTextField.frame.origin.x, y: self.secretTextField.frame.origin.y - (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.secretTextField.bounds.size.width, height: self.secretTextField.bounds.size.height)
+        }
+    }
+    
+    //MARK: - 键盘隐藏
+    func recoverCenterpartFrame(noti:Notification) -> () {
+        centerSetHide()
+        kIfKeyboardShowed = false
+    }
+    
+    //@ set
+    func centerSetHide() -> () {
+        logNode.run(SKAction.move(by: CGVector.init(dx: 0, dy: -(keyBoardHeight-(slightBackNode.size.height-logNode.size.height)/2)), duration: 0.3))
+        UIView.animate(withDuration: 0.3) {
+            self.nameTextField.frame = CGRect.init(x: self.nameTextField.frame.origin.x, y: self.nameTextField.frame.origin.y + (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.nameTextField.bounds.size.width, height: self.nameTextField.bounds.size.height)
+            self.secretTextField.frame = CGRect.init(x: self.secretTextField.frame.origin.x, y: self.secretTextField.frame.origin.y + (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.secretTextField.bounds.size.width, height: self.secretTextField.bounds.size.height)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    //@ 设置火柴人
     func setHuoChaiRen() -> () {
-        /*
-         SKTextureAtlas *atlas = [SKTextureAtlas atlasNamed:@“monster.atlas”];
-         SKTexture *f1 = [atlas textureNamed:@”master-walk1.png”];
-         SKTexture *f2 = [atlas textureNamed:@”master-walk2.png”];
-         SKTexture *f3 = [atlas textureNamed:@”master-walk3.png”];
-         SKTexture *f4 = [atlas textureNamed:@”master-walk4.png”];
-         NSArray *monsterWalkTextures = @[f1,f2,f3,f4];
-         */
         
-        
-         let atlas = SKTextureAtlas(named: "go") // atlas name
+         let atlas = SKTextureAtlas(named: "run") // atlas name
          var goArray = [SKTexture]()
          
          let imageCount = atlas.textureNames.count
          for index in 0..<imageCount {
-            let textureName = "go\(index+1)"
+            let textureName = "run\(index+1)"
             goArray.append(atlas.textureNamed(textureName))
          }
- 
-//        let atlas = SKTextureAtlas.init(named: "go")
-//        let go1 = atlas.textureNamed("go1")
-//        let go2 = atlas.textureNamed("go2")
-//        let go3 = atlas.textureNamed("go3")
-//        let go4 = atlas.textureNamed("go4")
-//        let go5 = atlas.textureNamed("go5")
-//        let goArray = [go1,go2,go3,go4,go5]
-//        
-        /*
-         SKAction *walkAnimation = [SKAction animateWithTextures:monsterWalkTextures timePerFrame:0.1]
-         [monster runAction:walkAnimation];
-         */
-        
+
         let huochaiNode = SKSpriteNode.init()
-        huochaiNode.size = CGSize.init(width: 40, height: 80)
-        huochaiNode.run(SKAction.animate(with: goArray, timePerFrame: 0.3))
+        huochaiNode.size = CGSize.init(width: 60, height: 80)
+        huochaiNode.run(SKAction.repeatForever(SKAction.animate(with: goArray, timePerFrame: 0.08)))
         huochaiNode.position = CGPoint.init(x: 64, y: 100)
         gameScene.addChild(huochaiNode)
     }
@@ -134,3 +192,21 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController {
+    
+    //MARK: - UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+}
+
+extension ViewController {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !kIfKeyboardShowed {
+            self.nameTextField.resignFirstResponder()
+            self.secretTextField.resignFirstResponder()
+        }
+    }
+}

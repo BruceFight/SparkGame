@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EF01B3231ECC807B008BE5EF /* tree_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */; };
 		EF01B3241ECC807B008BE5EF /* tree_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */; };
+		EF4F74711ECD79B4008D3787 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F74701ECD79B4008D3787 /* SuperViewController.swift */; };
 		EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */; };
 		EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC31ECBEBC70065ED63 /* ViewController.swift */; };
 		EFEECEC71ECBEBC70065ED63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEC51ECBEBC70065ED63 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree_sel@2x.png"; sourceTree = "<group>"; };
 		EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree_sel@3x.png"; sourceTree = "<group>"; };
+		EF4F74701ECD79B4008D3787 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		EFEECEBE1ECBEBC60065ED63 /* SparkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEECEC31ECBEBC70065ED63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */,
+				EF4F74701ECD79B4008D3787 /* SuperViewController.swift */,
 				EFEECEC31ECBEBC70065ED63 /* ViewController.swift */,
 				EFEECEC51ECBEBC70065ED63 /* Main.storyboard */,
 				EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */,
+				EF4F74711ECD79B4008D3787 /* SuperViewController.swift in Sources */,
 				EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V5D8U6F5QF;
 				INFOPLIST_FILE = SparkGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -451,7 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V5D8U6F5QF;
 				INFOPLIST_FILE = SparkGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
