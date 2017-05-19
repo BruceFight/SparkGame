@@ -83,6 +83,7 @@ class ViewController: SuperViewController,UITextFieldDelegate {
         logView.isHidden = false
         logView.leftEmmiterNode.particleBirthRate = 1
         logView.rightEmmiterNode.particleBirthRate = 1
+        resetView.phoneFeild.resignFirstResponder()
         resetView.isHidden = true
         backBtn.isHidden = true
     }
