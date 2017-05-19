@@ -15,24 +15,23 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     var gameScene = SKScene()
     var slightBackNode = SKSpriteNode()
     var nameLabelNode = SKLabelNode()
-    var leftEmmiterNode = SKEmitterNode()
-    var rightEmmiterNode = SKEmitterNode()
-    
-    //@ forLogNode
-    var logNode = SKSpriteNode()
-    var nameTextField = UITextField()
-    var secretTextField = UITextField()
-    
+//    var leftEmmiterNode = SKEmitterNode()
+//    var rightEmmiterNode = SKEmitterNode()
+    var logView = JBLogMainView()
+    var resetView = JBLogResetView()
+    var backBtn = UIButton()
+
     fileprivate var keyBoardHeight : CGFloat = 0
     fileprivate var kIfKeyboardShowed : Bool = false
     
     //MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        setMainView()
+        setConfigures()
+        addObserverForKeyBoard()
     }
     
-    func setMainView() -> () {
+    func setConfigures() -> () {
         //@ mainSKView
         mainSKView = SKView.init(frame: self.view.bounds)
         mainSKView.ignoresSiblingOrder = false
@@ -48,61 +47,62 @@ class ViewController: SuperViewController,UITextFieldDelegate {
         
         mainSKView.presentScene(gameScene)
         setHuoChaiRen()
-        setLogView()
-        setLogNode()
         self.view.addSubview(mainSKView)
-    }
-    
-    func setLogView() -> () {
-        //@ logNode
-        logNode = SKSpriteNode.init(imageNamed: "image 9")
-        logNode.size = CGSize.init(width: 400, height: 350)
-        logNode.position = CGPoint.init(x: gameScene.size.width/2, y: gameScene.size.height/2)
-        gameScene.addChild(logNode)
-        //@ nameLabelNode
-        nameLabelNode = SKLabelNode.init(text: "晓培优")
-        nameLabelNode.fontName = "Zapfino"
-        nameLabelNode.fontColor = UIColor.red
-        nameLabelNode.position = CGPoint.init(x: 0, y: logNode.size.height/2)
-        //@ emitterNode
-        setEmitterNode(node: leftEmmiterNode, position: CGPoint.init(x:-logNode.size.width/2, y: logNode.size.height/2))
-        setEmitterNode(node: rightEmmiterNode, position: CGPoint.init(x:logNode.size.width/2, y: logNode.size.height/2))
         
-        logNode.addChild(nameLabelNode)
-    }
-    
-    //@ 设置左右粒子
-    func setEmitterNode(node:SKEmitterNode,position:CGPoint) -> () {
-        node.particleTexture = SKTexture.init(imageNamed: "tree_sel")
-        node.position = CGPoint.init(x:logNode.size.width/2, y: logNode.size.height/2)
-        node.position = position
-        node.particlePosition = CGPoint.init(x: 0, y: 0)
-        node.particleBirthRate = 1
-        node.particleLifetime = 2
-        node.particleSize = CGSize.init(width: 10, height: 10)
-        node.particleAlphaRange = 0.6
-        node.particleSpeedRange = 80
-        node.emissionAngleRange = 360
-        node.targetNode = logNode
-        logNode.addChild(node)
-    }
-    
-    func setLogNode() -> () {
-        nameTextField = UITextField.init(frame: CGRect.init(x: (slightBackNode.size.width)/2-100, y: (slightBackNode.size.height)/2-30, width: 200, height: 30))
-        nameTextField.tag = nameTextField.hash
-        nameTextField.delegate = self
-        nameTextField.backgroundColor = UIColor.clear
-        nameTextField.background = #imageLiteral(resourceName: "tree_sel.png")
+        //@ LogView
+        logView = JBLogMainView.init(frame: CGRect.init(x: (self.view.bounds.width-600)/2, y: (self.view.bounds.size.height-500)/2, width: 600, height: 500))
+        UIView.animate(withDuration: 0.2, animations: {
+            self.logView.transform = CGAffineTransform.init(scaleX: 0.75, y: 0.75)
+        }) { (true) in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.logView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            })
+        }
+        logView.centerBtnTouchHandler = { [weak self](btn,hash) in
+            print(" >>>>>>>>>> 💕\(btn.tag)")
+            switch btn.tag {
+            case hash >> 1://Login
+                
+                break
+            case hash >> 2://Remember
+                
+                break
+            case hash >> 3://Forget
+                self?.logView.nameTextField.resignFirstResponder()
+                self?.logView.secretTextField.resignFirstResponder()
+                self?.logView.isHidden = true
+                self?.logView.leftEmmiterNode.particleBirthRate = 0
+                self?.logView.rightEmmiterNode.particleBirthRate = 0
+                self?.resetView.isHidden = false
+                self?.backBtn.isHidden = false
+                break
+            default:break
+            }
+        }
+        self.view.addSubview(logView)
         
-        secretTextField = UITextField.init(frame: CGRect.init(x: (slightBackNode.size.width)/2-100, y: (slightBackNode.size.height)/2+30, width: 200, height: 30))
-        secretTextField.tag = secretTextField.hash
-        secretTextField.delegate = self
-        secretTextField.backgroundColor = UIColor.clear
-        mainSKView.addSubview(nameTextField)
-        mainSKView.addSubview(secretTextField)
-        addObserverForKeyBoard()
+        
+        resetView = JBLogResetView.init(frame: CGRect.init(x: (self.view.bounds.width-600)/2, y: (self.view.bounds.size.height-500)/2, width: 600, height: 500))
+        resetView.isHidden = true
+        self.view.addSubview(resetView)
+        
+        backBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 100))
+        backBtn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
+        backBtn.isHidden = true
+        backBtn.addTarget(self, action: #selector(backToMain), for: .touchUpInside)
+        self.view.addSubview(backBtn)
     }
     
+    //@ back
+    func backToMain() -> () {
+        logView.isHidden = false
+        logView.leftEmmiterNode.particleBirthRate = 1
+        logView.rightEmmiterNode.particleBirthRate = 1
+        resetView.isHidden = true
+        backBtn.isHidden = true
+    }
+    
+    //MARK: - Add Observer
     func addObserverForKeyBoard() -> () {
         NotificationCenter.default.addObserver(self, selector: #selector(changeCenterPartFrame(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(recoverCenterpartFrame(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -126,10 +126,10 @@ class ViewController: SuperViewController,UITextFieldDelegate {
         let boardRect = value as! CGRect
         
         if boardRect.height<=55 {
-            return
+            
         }else {
             if kIfKeyboardShowed {
-                return
+                
             }else{
                 keyBoardHeight = boardRect.height
                 centerSetShowed()
@@ -140,10 +140,9 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     
     //@ set
     func centerSetShowed() -> () {
-        logNode.run(SKAction.move(by: CGVector.init(dx: 0, dy: keyBoardHeight-(slightBackNode.size.height-logNode.size.height)/2), duration: 0.3))
         UIView.animate(withDuration: 0.3) {
-            self.nameTextField.frame = CGRect.init(x: self.nameTextField.frame.origin.x, y: self.nameTextField.frame.origin.y - (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.nameTextField.bounds.size.width, height: self.nameTextField.bounds.size.height)
-            self.secretTextField.frame = CGRect.init(x: self.secretTextField.frame.origin.x, y: self.secretTextField.frame.origin.y - (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.secretTextField.bounds.size.width, height: self.secretTextField.bounds.size.height)
+            self.logView.frame = CGRect.init(x: self.logView.frame.origin.x, y: -100, width: self.logView.frame.size.width, height: self.logView.frame.size.height)
+            self.resetView.frame = CGRect.init(x: self.resetView.frame.origin.x, y: -100, width: self.resetView.frame.size.width, height: self.resetView.frame.size.height)
         }
     }
     
@@ -155,10 +154,10 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     
     //@ set
     func centerSetHide() -> () {
-        logNode.run(SKAction.move(by: CGVector.init(dx: 0, dy: -(keyBoardHeight-(slightBackNode.size.height-logNode.size.height)/2)), duration: 0.3))
+
         UIView.animate(withDuration: 0.3) {
-            self.nameTextField.frame = CGRect.init(x: self.nameTextField.frame.origin.x, y: self.nameTextField.frame.origin.y + (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.nameTextField.bounds.size.width, height: self.nameTextField.bounds.size.height)
-            self.secretTextField.frame = CGRect.init(x: self.secretTextField.frame.origin.x, y: self.secretTextField.frame.origin.y + (self.keyBoardHeight-(self.slightBackNode.size.height-self.logNode.size.height)/2), width: self.secretTextField.bounds.size.width, height: self.secretTextField.bounds.size.height)
+            self.logView.frame = CGRect.init(x: self.logView.frame.origin.x, y: (self.view.bounds.size.height-500)/2, width: self.logView.frame.size.width, height: self.logView.frame.size.height)
+            self.resetView.frame = CGRect.init(x: self.resetView.frame.origin.x, y: (self.view.bounds.size.height-500)/2, width: self.resetView.frame.size.width, height: self.resetView.frame.size.height)
         }
     }
     
@@ -179,6 +178,7 @@ class ViewController: SuperViewController,UITextFieldDelegate {
          }
 
         let huochaiNode = SKSpriteNode.init()
+        huochaiNode.isUserInteractionEnabled = true
         huochaiNode.size = CGSize.init(width: 60, height: 80)
         huochaiNode.run(SKAction.repeatForever(SKAction.animate(with: goArray, timePerFrame: 0.08)))
         huochaiNode.position = CGPoint.init(x: 64, y: 100)
@@ -189,24 +189,5 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension ViewController {
-    
-    //MARK: - UITextFieldDelegate
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-    }
-    
-}
-
-extension ViewController {
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !kIfKeyboardShowed {
-            self.nameTextField.resignFirstResponder()
-            self.secretTextField.resignFirstResponder()
-        }
     }
 }
