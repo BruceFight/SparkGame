@@ -40,6 +40,8 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
         nameTextField.tag = nameTextField.hash
         nameTextField.delegate = self
         nameTextField.backgroundColor = UIColor.yellow
+        nameTextField.attributedPlaceholder = NSAttributedString.init(string: "手机号/学而不思则罔", attributes: [NSForegroundColorAttributeName:UIColor.brown,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 14)])
+        nameTextField.tintColor = UIColor.white
 //        nameTextField.background = #imageLiteral(resourceName: "prompt_2")
 
         secretImageNode = UIButton.init(frame: CGRect.init(x: iconImageNode.frame.origin.x, y: iconImageNode.frame.maxY+20, width: 40, height: 40))
@@ -48,6 +50,8 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
         secretTextField.tag = secretTextField.hash
         secretTextField.delegate = self
         secretTextField.backgroundColor = UIColor.yellow
+        secretTextField.attributedPlaceholder = NSAttributedString.init(string: "密码/思而不学则殆", attributes: [NSForegroundColorAttributeName:UIColor.brown,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 14)])
+        secretTextField.tintColor = UIColor.white
 //        secretTextField.background = #imageLiteral(resourceName: "prompt_2")
 
         logBtn = UIButton.init(frame: CGRect.init(x: (frame.size.width-150)/2, y: frame.size.height-190, width: 150, height: 50))

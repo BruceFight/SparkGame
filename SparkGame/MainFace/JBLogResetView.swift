@@ -15,6 +15,9 @@ class JBLogResetView: JBLogView,UITextFieldDelegate {
     var implementLabel = UILabel()
     var getModiCodeBtn = UIButton()
     
+    var getModifyCodeHandler : (() -> ())?
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setSuperNode()
@@ -40,6 +43,8 @@ class JBLogResetView: JBLogView,UITextFieldDelegate {
         titleLabel.frame = CGRect.init(x: (frame.size.width-titleLabel.bounds.size.width)/2, y: JBLogView.realOriginY + 40, width: titleLabel.bounds.size.width, height: titleLabel.bounds.size.height)
         
         phoneFeild = UITextField.init(frame: CGRect.init(x: JBLogView.realOriginX+40, y: frame.size.height/2-25 , width: frame.size.width-(2*(JBLogView.realOriginX+40)), height: 50))
+        phoneFeild.attributedPlaceholder = NSAttributedString.init(string: "请输入手机号", attributes: [NSForegroundColorAttributeName:UIColor.brown,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 14)])
+        phoneFeild.tintColor = UIColor.white
         phoneFeild.delegate = self
         phoneFeild.backgroundColor = UIColor.yellow
         
@@ -65,6 +70,6 @@ class JBLogResetView: JBLogView,UITextFieldDelegate {
     }
    
     func getModiCode(btn:UIButton) -> () {
-        
+        getModifyCodeHandler?()
     }
 }

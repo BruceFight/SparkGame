@@ -11,15 +11,10 @@ import SpriteKit
 
 class ViewController: SuperViewController,UITextFieldDelegate {
 
-    var mainSKView = SKView()
-    var gameScene = SKScene()
-    var slightBackNode = SKSpriteNode()
-    var nameLabelNode = SKLabelNode()
-//    var leftEmmiterNode = SKEmitterNode()
-//    var rightEmmiterNode = SKEmitterNode()
-    var logView = JBLogMainView()
-    var resetView = JBLogResetView()
-    var backBtn = UIButton()
+    var mainSKView = JBMainSKView()
+    var logView    = JBLogMainView()
+    var resetView  = JBLogResetView()
+    var backBtn    = UIButton()
 
     fileprivate var keyBoardHeight : CGFloat = 0
     fileprivate var kIfKeyboardShowed : Bool = false
@@ -33,20 +28,7 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     
     func setConfigures() -> () {
         //@ mainSKView
-        mainSKView = SKView.init(frame: self.view.bounds)
-        mainSKView.ignoresSiblingOrder = false
-        mainSKView.showsNodeCount = true
-        mainSKView.showsFPS = true
-        gameScene = SKScene.init(size: mainSKView.bounds.size)
-        gameScene.scaleMode = .fill
-        //@ slightBackNode
-        slightBackNode = SKSpriteNode.init(imageNamed: "image 6")
-        slightBackNode.size = gameScene.size
-        slightBackNode.position = CGPoint.init(x: gameScene.size.width/2, y: gameScene.size.height/2)
-        gameScene.addChild(slightBackNode)
-        
-        mainSKView.presentScene(gameScene)
-        setHuoChaiRen()
+        mainSKView = JBMainSKView.init(frame: self.view.bounds)
         self.view.addSubview(mainSKView)
         
         //@ LogView
@@ -83,6 +65,9 @@ class ViewController: SuperViewController,UITextFieldDelegate {
         
         
         resetView = JBLogResetView.init(frame: CGRect.init(x: (self.view.bounds.width-600)/2, y: (self.view.bounds.size.height-500)/2, width: 600, height: 500))
+        resetView.getModifyCodeHandler = { [weak self] in
+            print(" >>>>>>> 获取验证码")
+        }
         resetView.isHidden = true
         self.view.addSubview(resetView)
         
@@ -164,27 +149,6 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
-    //@ 设置火柴人
-    func setHuoChaiRen() -> () {
-        
-         let atlas = SKTextureAtlas(named: "run") // atlas name
-         var goArray = [SKTexture]()
-         
-         let imageCount = atlas.textureNames.count
-         for index in 0..<imageCount {
-            let textureName = "run\(index+1)"
-            goArray.append(atlas.textureNamed(textureName))
-         }
-
-        let huochaiNode = SKSpriteNode.init()
-        huochaiNode.isUserInteractionEnabled = true
-        huochaiNode.size = CGSize.init(width: 60, height: 80)
-        huochaiNode.run(SKAction.repeatForever(SKAction.animate(with: goArray, timePerFrame: 0.08)))
-        huochaiNode.position = CGPoint.init(x: 64, y: 100)
-        gameScene.addChild(huochaiNode)
-    }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
