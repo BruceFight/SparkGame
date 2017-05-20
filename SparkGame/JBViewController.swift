@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  JBViewController.swift
 //  SparkGame
 //
 //  Created by Bruce Jiang on 2017/5/17.
@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class ViewController: SuperViewController,UITextFieldDelegate {
+class JBViewController: JBSuperViewController,UITextFieldDelegate {
 
     var mainSKView = JBMainSKView()
     var logView    = JBLogMainView()
@@ -33,18 +33,19 @@ class ViewController: SuperViewController,UITextFieldDelegate {
         
         //@ LogView
         logView = JBLogMainView.init(frame: CGRect.init(x: (self.view.bounds.width-600)/2, y: (self.view.bounds.size.height-500)/2, width: 600, height: 500))
-        UIView.animate(withDuration: 0.2, animations: {
-            self.logView.transform = CGAffineTransform.init(scaleX: 0.75, y: 0.75)
-        }) { (true) in
-            UIView.animate(withDuration: 0.2, animations: {
-                self.logView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            })
+        JBControl.instance.setScale(from: 0.75, to: 1, with: self.logView) {
+            //动画完后
         }
+
         logView.centerBtnTouchHandler = { [weak self](btn,hash) in
             print(" >>>>>>>>>> 💕\(btn.tag)")
             switch btn.tag {
             case hash >> 1://Login
-                
+                 // Present the scene with a transition.
+                self?.logView.removeFromSuperview()
+                self?.resetView.removeFromSuperview()
+                self?.mainSKView.resetScene(bgImage: "image 5")
+                self?.mainSKView.setWebView(to:CGRect.zero)
                 break
             case hash >> 2://Remember
                 
@@ -65,8 +66,8 @@ class ViewController: SuperViewController,UITextFieldDelegate {
         
         
         resetView = JBLogResetView.init(frame: CGRect.init(x: (self.view.bounds.width-600)/2, y: (self.view.bounds.size.height-500)/2, width: 600, height: 500))
-        resetView.getModifyCodeHandler = { [weak self] in
-            print(" >>>>>>> 获取验证码")
+        resetView.getModifyCodeHandler = {
+            //获取验证码
         }
         resetView.isHidden = true
         self.view.addSubview(resetView)
@@ -140,7 +141,6 @@ class ViewController: SuperViewController,UITextFieldDelegate {
     
     //@ set
     func centerSetHide() -> () {
-
         UIView.animate(withDuration: 0.3) {
             self.logView.frame = CGRect.init(x: self.logView.frame.origin.x, y: (self.view.bounds.size.height-500)/2, width: self.logView.frame.size.width, height: self.logView.frame.size.height)
             self.resetView.frame = CGRect.init(x: self.resetView.frame.origin.x, y: (self.view.bounds.size.height-500)/2, width: self.resetView.frame.size.width, height: self.resetView.frame.size.height)

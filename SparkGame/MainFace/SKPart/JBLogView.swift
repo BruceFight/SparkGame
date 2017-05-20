@@ -11,6 +11,7 @@ import SpriteKit
 
 class JBLogView: SKView {
 
+    //MARK: - parameters
     var mainScene        = SKScene()
     var titleNode        = SKLabelNode()
     var centerNode       = SKSpriteNode()
@@ -20,6 +21,7 @@ class JBLogView: SKView {
     public static let realOriginX : CGFloat = 100
     public static let realOriginY : CGFloat = 100
     
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.ignoresSiblingOrder = false
@@ -63,7 +65,6 @@ class JBLogView: SKView {
         centerNode.addChild(node)
     }
     
-   
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

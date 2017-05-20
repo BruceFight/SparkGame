@@ -10,14 +10,16 @@ import UIKit
 
 class JBLogResetView: JBLogView,UITextFieldDelegate {
     
+    //MARK: - parameters
     var titleLabel     = UILabel()
     var phoneFeild     = UITextField()
     var implementLabel = UILabel()
     var getModiCodeBtn = UIButton()
     
+    //MARK: - callback
     var getModifyCodeHandler : (() -> ())?
     
-    
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setSuperNode()
@@ -69,6 +71,7 @@ class JBLogResetView: JBLogView,UITextFieldDelegate {
         self.addSubview(getModiCodeBtn)
     }
    
+    //@ btn clicked
     func getModiCode(btn:UIButton) -> () {
         getModifyCodeHandler?()
     }

@@ -6,6 +6,10 @@
 //  Copyright © 2017年 Bruce Jiang. All rights reserved.
 //
 
+/**
+ *  even though 'SKNode' class ,also can be interacted with user. before that ,💕 set 'isUserInteractionEnabled' for true
+ *  then override 'touchesBegan' , 'touchesEnded'... ,you can write the event inside . due to 'SKNode' is subclass of 'UIResponder', so it also can be responde to the touch of user
+ */
 import UIKit
 import SpriteKit
 

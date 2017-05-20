@@ -1,5 +1,5 @@
 //
-//  SuperViewController.swift
+//  JBSuperViewController.swift
 //  SparkGame
 //
 //  Created by Bruce Jiang on 2017/5/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuperViewController: UIViewController {
+class JBSuperViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

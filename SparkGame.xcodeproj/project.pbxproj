@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		EF01B3231ECC807B008BE5EF /* tree_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */; };
 		EF01B3241ECC807B008BE5EF /* tree_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */; };
-		EF29ACA71ECF15FE00CFF77D /* JBAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29ACA11ECF15FE00CFF77D /* JBAnimationView.swift */; };
-		EF29ACA81ECF15FE00CFF77D /* JBButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29ACA21ECF15FE00CFF77D /* JBButtonNode.swift */; };
-		EF29ACA91ECF15FE00CFF77D /* JBLogMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29ACA31ECF15FE00CFF77D /* JBLogMainView.swift */; };
-		EF29ACAA1ECF15FE00CFF77D /* JBLogResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29ACA41ECF15FE00CFF77D /* JBLogResetView.swift */; };
-		EF29ACAB1ECF15FE00CFF77D /* JBLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29ACA51ECF15FE00CFF77D /* JBLogView.swift */; };
-		EF29ACAC1ECF15FE00CFF77D /* JBMainSKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29ACA61ECF15FE00CFF77D /* JBMainSKView.swift */; };
-		EF4F74711ECD79B4008D3787 /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F74701ECD79B4008D3787 /* SuperViewController.swift */; };
+		EF4F74711ECD79B4008D3787 /* JBSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4F74701ECD79B4008D3787 /* JBSuperViewController.swift */; };
+		EF5A7B591ED04FBE00C2E1E1 /* JBButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7B511ED04FBE00C2E1E1 /* JBButtonNode.swift */; };
+		EF5A7B5A1ED04FBE00C2E1E1 /* JBLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7B521ED04FBE00C2E1E1 /* JBLogView.swift */; };
+		EF5A7B5B1ED04FBE00C2E1E1 /* JBMainSKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7B531ED04FBE00C2E1E1 /* JBMainSKView.swift */; };
+		EF5A7B5C1ED04FBE00C2E1E1 /* JBControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7B551ED04FBE00C2E1E1 /* JBControl.swift */; };
+		EF5A7B5D1ED04FBE00C2E1E1 /* JBLogMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7B571ED04FBE00C2E1E1 /* JBLogMainView.swift */; };
+		EF5A7B5E1ED04FBE00C2E1E1 /* JBLogResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A7B581ED04FBE00C2E1E1 /* JBLogResetView.swift */; };
 		EF717E041ECEEF5000A7EFDD /* back_pre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF717E021ECEEF5000A7EFDD /* back_pre@2x.png */; };
 		EF717E051ECEEF5000A7EFDD /* back_pre@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF717E031ECEEF5000A7EFDD /* back_pre@3x.png */; };
 		EF9975E11ECEDC680030800E /* me_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF9975DD1ECEDC680030800E /* me_sel@2x.png */; };
 		EF9975E21ECEDC680030800E /* me_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF9975DE1ECEDC680030800E /* me_sel@3x.png */; };
 		EF9975E31ECEDC680030800E /* secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF9975DF1ECEDC680030800E /* secret@2x.png */; };
 		EF9975E41ECEDC680030800E /* secret@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF9975E01ECEDC680030800E /* secret@3x.png */; };
-		EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */; };
-		EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC31ECBEBC70065ED63 /* ViewController.swift */; };
+		EFEECEC21ECBEBC70065ED63 /* JBAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC11ECBEBC60065ED63 /* JBAppDelegate.swift */; };
+		EFEECEC41ECBEBC70065ED63 /* JBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEECEC31ECBEBC70065ED63 /* JBViewController.swift */; };
 		EFEECEC71ECBEBC70065ED63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEC51ECBEBC70065ED63 /* Main.storyboard */; };
 		EFEECEC91ECBEBC70065ED63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */; };
 		EFEECECC1ECBEBC70065ED63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFEECECA1ECBEBC70065ED63 /* LaunchScreen.storyboard */; };
@@ -51,13 +51,13 @@
 /* Begin PBXFileReference section */
 		EF01B31C1ECC807B008BE5EF /* tree_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree_sel@2x.png"; sourceTree = "<group>"; };
 		EF01B31D1ECC807B008BE5EF /* tree_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tree_sel@3x.png"; sourceTree = "<group>"; };
-		EF29ACA11ECF15FE00CFF77D /* JBAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBAnimationView.swift; sourceTree = "<group>"; };
-		EF29ACA21ECF15FE00CFF77D /* JBButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBButtonNode.swift; sourceTree = "<group>"; };
-		EF29ACA31ECF15FE00CFF77D /* JBLogMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBLogMainView.swift; sourceTree = "<group>"; };
-		EF29ACA41ECF15FE00CFF77D /* JBLogResetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBLogResetView.swift; sourceTree = "<group>"; };
-		EF29ACA51ECF15FE00CFF77D /* JBLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBLogView.swift; sourceTree = "<group>"; };
-		EF29ACA61ECF15FE00CFF77D /* JBMainSKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBMainSKView.swift; sourceTree = "<group>"; };
-		EF4F74701ECD79B4008D3787 /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
+		EF4F74701ECD79B4008D3787 /* JBSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBSuperViewController.swift; sourceTree = "<group>"; };
+		EF5A7B511ED04FBE00C2E1E1 /* JBButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBButtonNode.swift; sourceTree = "<group>"; };
+		EF5A7B521ED04FBE00C2E1E1 /* JBLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBLogView.swift; sourceTree = "<group>"; };
+		EF5A7B531ED04FBE00C2E1E1 /* JBMainSKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBMainSKView.swift; sourceTree = "<group>"; };
+		EF5A7B551ED04FBE00C2E1E1 /* JBControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBControl.swift; sourceTree = "<group>"; };
+		EF5A7B571ED04FBE00C2E1E1 /* JBLogMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBLogMainView.swift; sourceTree = "<group>"; };
+		EF5A7B581ED04FBE00C2E1E1 /* JBLogResetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JBLogResetView.swift; sourceTree = "<group>"; };
 		EF717E021ECEEF5000A7EFDD /* back_pre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_pre@2x.png"; sourceTree = "<group>"; };
 		EF717E031ECEEF5000A7EFDD /* back_pre@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_pre@3x.png"; sourceTree = "<group>"; };
 		EF9975DD1ECEDC680030800E /* me_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_sel@2x.png"; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		EF9975DF1ECEDC680030800E /* secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "secret@2x.png"; sourceTree = "<group>"; };
 		EF9975E01ECEDC680030800E /* secret@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "secret@3x.png"; sourceTree = "<group>"; };
 		EFEECEBE1ECBEBC60065ED63 /* SparkGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFEECEC31ECBEBC70065ED63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFEECEC11ECBEBC60065ED63 /* JBAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBAppDelegate.swift; sourceTree = "<group>"; };
+		EFEECEC31ECBEBC70065ED63 /* JBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBViewController.swift; sourceTree = "<group>"; };
 		EFEECEC61ECBEBC70065ED63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFEECECB1ECBEBC70065ED63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,14 +123,38 @@
 		EF29ACA01ECF15FE00CFF77D /* MainFace */ = {
 			isa = PBXGroup;
 			children = (
-				EF29ACA11ECF15FE00CFF77D /* JBAnimationView.swift */,
-				EF29ACA21ECF15FE00CFF77D /* JBButtonNode.swift */,
-				EF29ACA31ECF15FE00CFF77D /* JBLogMainView.swift */,
-				EF29ACA41ECF15FE00CFF77D /* JBLogResetView.swift */,
-				EF29ACA51ECF15FE00CFF77D /* JBLogView.swift */,
-				EF29ACA61ECF15FE00CFF77D /* JBMainSKView.swift */,
+				EF5A7B501ED04FBE00C2E1E1 /* SKPart */,
+				EF5A7B541ED04FBE00C2E1E1 /* ToolPart */,
+				EF5A7B561ED04FBE00C2E1E1 /* UIKitPart */,
 			);
 			path = MainFace;
+			sourceTree = "<group>";
+		};
+		EF5A7B501ED04FBE00C2E1E1 /* SKPart */ = {
+			isa = PBXGroup;
+			children = (
+				EF5A7B511ED04FBE00C2E1E1 /* JBButtonNode.swift */,
+				EF5A7B521ED04FBE00C2E1E1 /* JBLogView.swift */,
+				EF5A7B531ED04FBE00C2E1E1 /* JBMainSKView.swift */,
+			);
+			path = SKPart;
+			sourceTree = "<group>";
+		};
+		EF5A7B541ED04FBE00C2E1E1 /* ToolPart */ = {
+			isa = PBXGroup;
+			children = (
+				EF5A7B551ED04FBE00C2E1E1 /* JBControl.swift */,
+			);
+			path = ToolPart;
+			sourceTree = "<group>";
+		};
+		EF5A7B561ED04FBE00C2E1E1 /* UIKitPart */ = {
+			isa = PBXGroup;
+			children = (
+				EF5A7B571ED04FBE00C2E1E1 /* JBLogMainView.swift */,
+				EF5A7B581ED04FBE00C2E1E1 /* JBLogResetView.swift */,
+			);
+			path = UIKitPart;
 			sourceTree = "<group>";
 		};
 		EFEECEB51ECBEBC60065ED63 = {
@@ -158,9 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				EF29ACA01ECF15FE00CFF77D /* MainFace */,
-				EFEECEC11ECBEBC60065ED63 /* AppDelegate.swift */,
-				EF4F74701ECD79B4008D3787 /* SuperViewController.swift */,
-				EFEECEC31ECBEBC70065ED63 /* ViewController.swift */,
+				EFEECEC11ECBEBC60065ED63 /* JBAppDelegate.swift */,
+				EF4F74701ECD79B4008D3787 /* JBSuperViewController.swift */,
+				EFEECEC31ECBEBC70065ED63 /* JBViewController.swift */,
 				EFEECEC51ECBEBC70065ED63 /* Main.storyboard */,
 				EFEECEC81ECBEBC70065ED63 /* Assets.xcassets */,
 				EFEECECA1ECBEBC70065ED63 /* LaunchScreen.storyboard */,
@@ -332,15 +356,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF29ACAA1ECF15FE00CFF77D /* JBLogResetView.swift in Sources */,
-				EFEECEC41ECBEBC70065ED63 /* ViewController.swift in Sources */,
-				EF29ACA81ECF15FE00CFF77D /* JBButtonNode.swift in Sources */,
-				EF29ACAB1ECF15FE00CFF77D /* JBLogView.swift in Sources */,
-				EF4F74711ECD79B4008D3787 /* SuperViewController.swift in Sources */,
-				EFEECEC21ECBEBC70065ED63 /* AppDelegate.swift in Sources */,
-				EF29ACAC1ECF15FE00CFF77D /* JBMainSKView.swift in Sources */,
-				EF29ACA91ECF15FE00CFF77D /* JBLogMainView.swift in Sources */,
-				EF29ACA71ECF15FE00CFF77D /* JBAnimationView.swift in Sources */,
+				EFEECEC41ECBEBC70065ED63 /* JBViewController.swift in Sources */,
+				EF5A7B5E1ED04FBE00C2E1E1 /* JBLogResetView.swift in Sources */,
+				EF4F74711ECD79B4008D3787 /* JBSuperViewController.swift in Sources */,
+				EF5A7B5A1ED04FBE00C2E1E1 /* JBLogView.swift in Sources */,
+				EF5A7B5B1ED04FBE00C2E1E1 /* JBMainSKView.swift in Sources */,
+				EF5A7B5D1ED04FBE00C2E1E1 /* JBLogMainView.swift in Sources */,
+				EF5A7B5C1ED04FBE00C2E1E1 /* JBControl.swift in Sources */,
+				EFEECEC21ECBEBC70065ED63 /* JBAppDelegate.swift in Sources */,
+				EF5A7B591ED04FBE00C2E1E1 /* JBButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +520,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V5D8U6F5QF;
 				INFOPLIST_FILE = SparkGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,7 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V5D8U6F5QF;
 				INFOPLIST_FILE = SparkGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spark.HuoHuoLive.SparkGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";

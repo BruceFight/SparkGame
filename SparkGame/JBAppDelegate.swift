@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  JBAppDelegate.swift
 //  SparkGame
 //
 //  Created by Bruce Jiang on 2017/5/17.
@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class JBAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
