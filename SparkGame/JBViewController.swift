@@ -29,6 +29,17 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
     func setConfigures() -> () {
         //@ mainSKView
         mainSKView = JBMainSKView.init(frame: self.view.bounds)
+        mainSKView.subNodeCallBack = {[weak self] (hash) in
+            guard let huochaiNodeHash = self?.mainSKView.huochaiNode.hash else {
+                fatalError("can not get hash value of host Node !")
+            }
+            switch hash {
+            case huochaiNodeHash:
+                print("HuoChaiNode clicked ! very cool !")
+                break
+            default:break
+            }
+        }
         mainSKViewTouchHandler()
         self.view.addSubview(mainSKView)
         
@@ -42,11 +53,15 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
             print(" >>>>>>>>>> 💕\(btn.tag)")
             switch btn.tag {
             case hash >> 1://Login
-                 // Present the scene with a transition.
+                // Present the scene with a transition.
                 self?.logView.removeFromSuperview()
                 self?.resetView.removeFromSuperview()
-                self?.mainSKView.resetScene(bgImage: "image 5")
+                self?.mainSKView.resetScene(bgImage: "image 1")
                 self?.mainSKView.setWebView(to:CGRect.zero)
+                // test of custom button.
+                let btnNode = JBButtonNode.init(texture: SKTexture.init(image: #imageLiteral(resourceName: "redstar")), color: UIColor.blue, size: CGSize.init(width: 100, height: 50),title:"Hello!")
+                btnNode.position = CGPoint.init(x: 64, y:80)
+                self?.mainSKView.mainScene.addChild(btnNode)
                 break
             case hash >> 2://Remember
                 

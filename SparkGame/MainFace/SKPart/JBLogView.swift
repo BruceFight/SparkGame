@@ -30,7 +30,8 @@ class JBLogView: SKView {
         mainScene = SKScene.init(size: frame.size)
         mainScene.scaleMode = .fill
         mainScene.backgroundColor = UIColor.clear
-        mainScene.position = CGPoint.init(x: frame.width/2, y: frame.height/2)
+        // -> Setting the position of a SKScene has no effect.
+        // -> mainScene.position = CGPoint.init(x: frame.width/2, y: frame.height/2)
         
         //@ titleNode
         titleNode = SKLabelNode.init(text: "晓培优")
@@ -40,7 +41,7 @@ class JBLogView: SKView {
         mainScene.addChild(titleNode)
         
         //@ centerNode
-        centerNode = SKSpriteNode.init(imageNamed: "image 9")
+        centerNode = SKSpriteNode.init(imageNamed: "image 5")
         centerNode.size = CGSize.init(width:frame.size.width-200, height: frame.size.height-200)
         centerNode.position = CGPoint.init(x: mainScene.size.width/2, y: mainScene.size.height/2)
         setEmitterNode(node: leftEmmiterNode, position: CGPoint.init(x:-centerNode.size.width/2, y: centerNode.size.height/2))
