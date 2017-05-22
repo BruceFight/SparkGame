@@ -11,11 +11,11 @@ import SpriteKit
 
 class JBViewController: JBSuperViewController,UITextFieldDelegate {
 
+    //MARK: - parameters
     var mainSKView = JBMainSKView()
     var logView    = JBLogMainView()
     var resetView  = JBLogResetView()
     var backBtn    = UIButton()
-
     fileprivate var keyBoardHeight : CGFloat = 0
     fileprivate var kIfKeyboardShowed : Bool = false
     
@@ -29,6 +29,7 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
     func setConfigures() -> () {
         //@ mainSKView
         mainSKView = JBMainSKView.init(frame: self.view.bounds)
+        mainSKViewTouchHandler()
         self.view.addSubview(mainSKView)
         
         //@ LogView
@@ -51,13 +52,13 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
                 
                 break
             case hash >> 3://Forget
+                self?.logView.isHidden = true
+                self?.backBtn.isHidden = false
+                self?.resetView.isHidden = false
                 self?.logView.nameTextField.resignFirstResponder()
                 self?.logView.secretTextField.resignFirstResponder()
-                self?.logView.isHidden = true
                 self?.logView.leftEmmiterNode.particleBirthRate = 0
                 self?.logView.rightEmmiterNode.particleBirthRate = 0
-                self?.resetView.isHidden = false
-                self?.backBtn.isHidden = false
                 break
             default:break
             }
@@ -77,6 +78,21 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
         backBtn.isHidden = true
         backBtn.addTarget(self, action: #selector(backToMain), for: .touchUpInside)
         self.view.addSubview(backBtn)
+    }
+    
+    
+    //MARK: - mainView touch delegate
+    func mainSKViewTouchHandler() -> () {
+        mainSKView.touchBegan = {[weak self] (touches,event) in
+            self?.logView.nameTextField.resignFirstResponder()
+            self?.logView.secretTextField.resignFirstResponder()
+        }
+        mainSKView.toucheMoved = {[weak self] (touches,event) in
+            
+        }
+        mainSKView.toucheEnded = {[weak self] (touches,event) in
+            
+        }
     }
     
     //@ back

@@ -51,17 +51,17 @@ class JBControl: NSObject {
         if withObject.isKind(of:UIView.self) {
             let withView = with as! UIView
             
-            UIView.animate(withDuration: 0.1, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 withView.transform = CGAffineTransform.init(scaleX: from, y: from)
             }) { (true) in
-                UIView.animate(withDuration: 0.1, animations: {
+                UIView.animate(withDuration: 0.3, animations: {
                     withView.transform = CGAffineTransform.init(scaleX: to, y: to)
                 })
             }
         }else if withObject.isKind(of: SKNode.self) {
             let withNode = with as! SKNode
-            let scaleIn = SKAction.scale(to: from, duration: 0.2)
-            let scaleOut = SKAction.scale(to: to, duration: 0.2)
+            let scaleIn = SKAction.scale(to: from, duration: 0.3)
+            let scaleOut = SKAction.scale(to: to, duration: 0.3)
             withNode.run(SKAction.sequence([scaleIn,scaleOut]))
         }
     }

@@ -11,18 +11,25 @@ import SpriteKit
 
 class JBMainSKView: SKView {
 
+    //MARK: - parameters
     var webView        = UIWebView()
     var mainScene      = SKScene()
     var backgroundNode = SKSpriteNode()
+    //@ touch callback
+    var touchBegan : ((_ touches: Set<UITouch>,_  event: UIEvent?) -> ())?
+    var toucheMoved : ((_ touches: Set<UITouch>,_ event: UIEvent?) -> ())?
+    var toucheEnded : ((_ touches: Set<UITouch>,_ event: UIEvent?) -> ())?
     
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.ignoresSiblingOrder = false
-        self.showsNodeCount = true
         self.showsFPS = true
+        self.showsNodeCount = true
         self.isAsynchronous = true
+        self.ignoresSiblingOrder = false
+        self.isUserInteractionEnabled = true
         
-        mainScene = SKScene.init(size: frame.size)
+        mainScene.size = frame.size
         mainScene.scaleMode = .fill
         
         //@ backgroundNode
@@ -38,10 +45,8 @@ class JBMainSKView: SKView {
             // 动画完后
         }
         mainScene.addChild(huochaiNode)
-        
         self.presentScene(mainScene)
     }
-    
     
     //MARK: - set webview
     func setWebView(to:CGRect) -> () {
@@ -75,5 +80,21 @@ class JBMainSKView: SKView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+}
 
+extension JBMainSKView {
+    
+    //MARK: - touch delegate
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        touchBegan?(touches,event)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        toucheMoved?(touches,event)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        toucheEnded?(touches,event)
+    }
 }
