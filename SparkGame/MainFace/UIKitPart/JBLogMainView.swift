@@ -40,7 +40,7 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
         nameTextField.tag = nameTextField.hash
         nameTextField.delegate = self
         nameTextField.backgroundColor = UIColor.yellow
-        nameTextField.attributedPlaceholder = NSAttributedString.init(string: "手机号/学而不思则罔", attributes: [NSForegroundColorAttributeName:UIColor.brown,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 14)])
+        nameTextField.attributedPlaceholder = NSAttributedString.init(string: "手机号/学而不思则罔", attributes: [NSAttributedString.Key.foregroundColor:UIColor.brown,NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
         nameTextField.tintColor = UIColor.white
 //        nameTextField.background = #imageLiteral(resourceName: "prompt_2")
 
@@ -50,14 +50,14 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
         secretTextField.tag = secretTextField.hash
         secretTextField.delegate = self
         secretTextField.backgroundColor = UIColor.yellow
-        secretTextField.attributedPlaceholder = NSAttributedString.init(string: "密码/思而不学则殆", attributes: [NSForegroundColorAttributeName:UIColor.brown,NSFontAttributeName:UIFont.boldSystemFont(ofSize: 14)])
+        secretTextField.attributedPlaceholder = NSAttributedString.init(string: "密码/思而不学则殆", attributes: [NSAttributedString.Key.foregroundColor:UIColor.brown,NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 14)])
         secretTextField.tintColor = UIColor.white
 //        secretTextField.background = #imageLiteral(resourceName: "prompt_2")
 
         logBtn = UIButton.init(frame: CGRect.init(x: (frame.size.width-150)/2, y: frame.size.height-190, width: 150, height: 50))
         logBtn.backgroundColor = UIColor.lightGray
         logBtn.setTitle("登录", for: .normal)
-        logBtn.titleLabel?.font = UIFont.systemFont(ofSize: 28, weight: 15)
+        logBtn.titleLabel?.font = UIFont.systemFont(ofSize: 28, weight: UIFont.Weight(rawValue: 15))
         logBtn.layer.cornerRadius = 25
         logBtn.tag = self.hash >> 1
         logBtn.addTarget(self, action: #selector(centerBtnTouch(btn:)), for: .touchUpInside)
@@ -65,7 +65,7 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
         rememberSecretBtn.setTitle("记住密码", for: .normal)
         rememberSecretBtn.setTitleColor(UIColor.brown, for: .normal)
         rememberSecretBtn.setImage(#imageLiteral(resourceName: "tree_sel.png"), for: .normal)
-        rememberSecretBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: 12)
+        rememberSecretBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 12))
         rememberSecretBtn.sizeToFit()
         rememberSecretBtn.tag = self.hash >> 2
         rememberSecretBtn.addTarget(self, action: #selector(centerBtnTouch(btn:)), for: .touchUpInside)
@@ -73,7 +73,7 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
         
         forgetSecretbtn.setTitle("忘记密码", for: .normal)
         forgetSecretbtn.setTitleColor(UIColor.brown, for: .normal)
-        forgetSecretbtn.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: 12)
+        forgetSecretbtn.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 12))
         forgetSecretbtn.sizeToFit()
         forgetSecretbtn.tag = self.hash >> 3
         forgetSecretbtn.addTarget(self, action: #selector(centerBtnTouch(btn:)), for: .touchUpInside)
@@ -95,7 +95,7 @@ class JBLogMainView: JBLogView ,UITextFieldDelegate{
 extension JBLogMainView {
     
     //MARK: - 界面按钮触发
-    func centerBtnTouch(btn:UIButton) -> () {
+    @objc func centerBtnTouch(btn:UIButton) -> () {
         print("💕 >>>>>>>>>> \(btn.tag)")
         centerBtnTouchHandler?(btn,self.hash)
     }

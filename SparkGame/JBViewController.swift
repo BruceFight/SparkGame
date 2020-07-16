@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class JBViewController: JBSuperViewController,UITextFieldDelegate {
-
+    
     //MARK: - parameters
     var mainSKView = JBMainSKView()
     var logView    = JBLogMainView()
@@ -27,7 +27,7 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
     }
     
     func setConfigures() -> () {
-        //@ mainSKView
+        /// mainSKView
         mainSKView = JBMainSKView.init(frame: self.view.bounds)
         mainSKView.subNodeCallBack = {[weak self] (hash) in
             guard let huochaiNodeHash = self?.mainSKView.huochaiNode.hash else {
@@ -43,12 +43,12 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
         mainSKViewTouchHandler()
         self.view.addSubview(mainSKView)
         
-        //@ LogView
+        /// LogView
         logView = JBLogMainView.init(frame: CGRect.init(x: (self.view.bounds.width-600)/2, y: (self.view.bounds.size.height-500)/2, width: 600, height: 500))
         JBControl.instance.setScale(from: 0.75, to: 1, with: self.logView) {
             //动画完后
         }
-
+        
         logView.centerBtnTouchHandler = { [weak self](btn,hash) in
             print(" >>>>>>>>>> 💕\(btn.tag)")
             switch btn.tag {
@@ -110,8 +110,8 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
         }
     }
     
-    //@ back
-    func backToMain() -> () {
+    /// back
+    @objc func backToMain() -> () {
         logView.isHidden = false
         logView.leftEmmiterNode.particleBirthRate = 1
         logView.rightEmmiterNode.particleBirthRate = 1
@@ -122,25 +122,25 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
     
     //MARK: - Add Observer
     func addObserverForKeyBoard() -> () {
-        NotificationCenter.default.addObserver(self, selector: #selector(changeCenterPartFrame(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(recoverCenterpartFrame(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willChangeF(noti:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeCenterPartFrame(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(recoverCenterpartFrame(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willChangeF(noti:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     //MARK: - 键盘Frame即将改变
-    func willChangeF(noti:Notification) -> () {
+    @objc func willChangeF(noti:Notification) -> () {
         ifRealNeedSet(noti: noti)
     }
     
     //MARK: - 键盘出现
-    func changeCenterPartFrame(noti:Notification) -> () {
+    @objc func changeCenterPartFrame(noti:Notification) -> () {
         ifRealNeedSet(noti: noti)
     }
     
-    //@ set真正的位置
+    /// set真正的位置
     func ifRealNeedSet(noti:Notification) -> () {
         let userInfo = noti.userInfo
-        let value = userInfo?[UIKeyboardFrameEndUserInfoKey]
+        let value = userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
         let boardRect = value as! CGRect
         
         if boardRect.height<=55 {
@@ -156,7 +156,7 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
         }
     }
     
-    //@ set
+    /// set
     func centerSetShowed() -> () {
         UIView.animate(withDuration: 0.3) {
             self.logView.frame = CGRect.init(x: self.logView.frame.origin.x, y: -100, width: self.logView.frame.size.width, height: self.logView.frame.size.height)
@@ -165,12 +165,12 @@ class JBViewController: JBSuperViewController,UITextFieldDelegate {
     }
     
     //MARK: - 键盘隐藏
-    func recoverCenterpartFrame(noti:Notification) -> () {
+    @objc func recoverCenterpartFrame(noti:Notification) -> () {
         centerSetHide()
         kIfKeyboardShowed = false
     }
     
-    //@ set
+    /// set
     func centerSetHide() -> () {
         UIView.animate(withDuration: 0.3) {
             self.logView.frame = CGRect.init(x: self.logView.frame.origin.x, y: (self.view.bounds.size.height-500)/2, width: self.logView.frame.size.width, height: self.logView.frame.size.height)
